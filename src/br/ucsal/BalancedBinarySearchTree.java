@@ -1,6 +1,6 @@
 package br.ucsal;
 
-public class BinarySearchTree {
+public class BalancedBinarySearchTree {
 
 	private BinaryNode root;
 
@@ -16,7 +16,7 @@ public class BinarySearchTree {
 		}
 	}
 
-	public BinarySearchTree() {
+	public BalancedBinarySearchTree() {
 		root = null;
 	}
 
@@ -89,15 +89,15 @@ public class BinarySearchTree {
 
 	private BinaryNode remove(int x, BinaryNode t) {
 		if (t == null)
-			return t; // Item não está na árvore ou árvore vazia, não faça nada
+			return t;
 		if (x < t.element)
 			t.left = remove(x, t.left);
 		else if (x > t.element)
 			t.right = remove(x, t.right);
-		else if (t.left != null && t.right != null) { // Caso 3 – nó com dois filhos
+		else if (t.left != null && t.right != null) {
 			t.element = findMin(t.right).element;
 			t.right = remove(t.element, t.right);
-		} else // Caso 1 e 2 – nó com um ou nenhum filho
+		} else 
 			t = (t.left != null) ? t.left : t.right;
 		return t;
 	}

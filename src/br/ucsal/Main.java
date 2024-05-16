@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			BinarySearchTree tree = new BinarySearchTree();
+			BalancedBinarySearchTree tree = new BalancedBinarySearchTree();
 			System.out.println("IsEmpty? "+tree.isEmpty());
 //			System.out.println("A arvore tem 1? ");
 //			System.out.println(tree.find(1));
